@@ -11,7 +11,7 @@ app.use(express.raw({ type: "application/vnd.custom-type" }));
 app.use(express.text({ type: "text/html" }));
 
 app.get("/hello", async (req, res) => {
-  return res.json({ message: "hello" });
+  res.json({ message: "hello" });
 });
 
 app.get("/todos", async (req, res) => {

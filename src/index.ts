@@ -10,12 +10,8 @@ app.use(express.json());
 app.use(express.raw({ type: "application/vnd.custom-type" }));
 app.use(express.text({ type: "text/html" }));
 
-app.post("/hello", async (req, res) => {
-  const message = {
-    message: "thank you for the goods",
-  };
-
-  return res.json(message);
+app.get("/hello", async (req, res) => {
+  return res.json({ message: "hello" });
 });
 
 app.get("/todos", async (req, res) => {

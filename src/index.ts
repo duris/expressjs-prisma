@@ -10,10 +10,6 @@ app.use(express.json());
 app.use(express.raw({ type: "application/vnd.custom-type" }));
 app.use(express.text({ type: "text/html" }));
 
-app.get("/hello", async (req, res) => {
-  res.json({ message: "hello" });
-});
-
 app.get("/todos", async (req, res) => {
   const todos = await prisma.todo.findMany({
     orderBy: { createdAt: "desc" },
